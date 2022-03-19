@@ -60,3 +60,15 @@ npx sanity init
     - Select project template. Choose a clean project with no predefined schemas.
 
 With that, we are all done with the sanity.io installation.
+```
+export const addQuery = `*[_type == "photo"] | order(_createdAt desc) {
+  image{
+    asset->{
+      url
+    }
+  },
+  _id
+    } `;//make sure you use back-ticks(``) instead of quotes
+//_id is the specific image id and url retrieves all images with the help of order(_createdAt desc)
+
+```
